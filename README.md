@@ -10,7 +10,7 @@ Change: initial version
 This project produces a summary per person(subject) and activity of that person on data used as in [Original Study](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). For a description of the original study see Appendix A of this README.
 
 Data is retrieved from a remote location at [Data file](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip).
-The supplied data includes frequent observations on a 561 elements long feature vector, along the feature observations the activity at time of feature observation and subject performing the activity is available. As a requirement, of the 561-feature vector only features with "mean()" and "std()" in their name are kept for the summary, the kept features contain the measurements on the mean and standard deviation(over a timewindow), 66 features are kept. Feature names are supplied but are changed for better usuability in R, "()" is removed and "-" is replaced by "_", eg tBodyAcc-mean()-X is changed to "tBodyAcc_mean_X". 
+The supplied data includes frequent observations on a 561 elements long feature vector, along the feature observations the activity at time of feature observation and subject performing the activity is available. As a requirement, of the 561-feature vector only features with "mean()" and "std()" in their name are kept for the summary, the kept features contain the measurements on the mean and standard deviation(over a timewindow), 66 features are kept. Feature names are supplied but are changed for better usuability in R, "()" is removed and "-" is replaced by "\_", eg tBodyAcc-mean()-X is changed to "tBodyAcc\_mean\_X". Also "avg_" is prefixed to indicate that the recorded features are averages, eg "avg\_tBodyAcc\_mean\_X".
 Supplied data is partitioned in test and train data, the data is now departitioned by simply concatenating the train dataset at the end of the test data set. The concatenated data is grouped by subject and activity label and the mean of each of the 66 features per group is calculated. Finally activity labels are replaced by the corresponding activity names, the result is stored in the file uci_har_get_clean_summary.csv in the working directory.
 
 ## Repository Files
@@ -74,7 +74,7 @@ Running the script run_analysis.R will:
 - for test data combine feature observations with corresponding subjects and activities, total columns is 68=1(subject)+1(activity)+66(features)
 - for train data combine feature observations with corresponding subjects and activities, total columns is 68=1(subject)+1(activity)+66(features)
 - row bind the test data and train data, ie append train data under test data
-- summarize data by taking mean of features observations per subject/activity id, then replace activity label by activity name
+- summarize data by taking mean of features observations per subject/activity id, then replace activity label by activity name, prefix featurenames with "avg_"
 - write the summarized data to the working directory, filename is "uci_har_get_clean_summary.csv"
 
 ## Appendix A

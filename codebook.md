@@ -15,7 +15,7 @@ run_analysis.R will output "uci_har_get_clean_summary.csv", stored in working di
 
 
 ## Featurenames
-The featurenames are provided in the dataset of the HAR study in the file features.txt, a description is given in features_info.txt. The HAR study delivers a featurevector of 561 elements, as a requirement, of the 561 feature vector only features with "mean()" and "std()" in their name are kept when constructing "uci_har_get_clean_summary.csv", the kept features contain the measurements on the mean and standard deviation(over a timewindow), 66 features are kept.
+In the dataset of the HAR study the featurenames are provided in the file features.txt, a description is given in features_info.txt. The HAR study delivers a featurevector of 561 elements, as a requirement, of the 561 feature vector only features with "mean()" and "std()" in their name are kept when constructing "uci_har_get_clean_summary.csv", the kept features contain the measurements on the mean and standard deviation(over a timewindow), 66 features are kept.
 
 I slightly adapted the explanation from the HAR study, quoted text in *italic*, taken from file features_info.txt the taxonomy of the feature names:
 
@@ -52,11 +52,11 @@ I slightly adapted the explanation from the HAR study, quoted text in *italic*, 
 *std(): Standard deviation*  
 *plus some more which are not relevant*  
 
-The featurenames from the HAR study are slightly adjusted, for better usuability in R, "()" is removed and "-" is replaced by "_", eg tBodyAcc-mean()-X is changed to "tBodyAcc_mean_X". No further adjustment is done to keep the names as close as possible to the original names who are already descriptive.
+The featurenames from the HAR study are slightly adjusted, for better usuability in R, "()" is removed and "-" is replaced by "\_", eg tBodyAcc-mean()-X is changed to  tBodyAcc\_mean\_X. Further "avg_" is prefixed for the featurename to indicate that the delivered value is an average. No further adjustment is done to keep the names as close as possible to the original names who are already descriptive.
 
-Examples, from the featurenames of "uci_har_get_clean_summary.csv"  
-tBodyAcc_mean_X: t prefix means time domain, BodyAcc is acceleration body part, mean is the estimated mean from the signals(over a small time period), X is the X-axis  
-fBodyAcc_std_Y: f prefix means frequency domain, BodyAcc is acceleration body part, std is the estimated standard deviation from the signals(over a small time period), Y is the Y-axis
+Examples, from the featurenames of "uci\_har\_get\_clean\_summary.csv"  
+"avg\_tBodyAcc\_mean\_X": avg for average, t prefix(after avg\_) means time domain, BodyAcc is acceleration body part, mean is the estimated mean from the signals(over a small time period), X is the X-axis  
+avg\_fBodyAcc\_std\_Y: avg for average,f prefix(after avg\_) means frequency domain, BodyAcc is acceleration body part, std is the estimated standard deviation from the signals(over a small time period), Y is the Y-axis
 
 Note: the semantics for features containing fBodyBody in the name are not given, probably one body too much. Nonetheless these featurenames are kept as is.
 
@@ -81,69 +81,69 @@ activity performed at feature observation
 
 Features:  
 The features are of type decimal between [-1,1] eg -0.928444801702128
-tBodyAcc_mean_X  
-tBodyAcc_mean_Y  
-tBodyAcc_mean_Z  
-tBodyAcc_std_X  
-tBodyAcc_std_Y  
-tBodyAcc_std_Z  
-tGravityAcc_mean_X  
-tGravityAcc_mean_Y  
-tGravityAcc_mean_Z  
-tGravityAcc_std_X  
-tGravityAcc_std_Y  
-tGravityAcc_std_Z  
-tBodyAccJerk_mean_X  
-tBodyAccJerk_mean_Y  
-tBodyAccJerk_mean_Z  
-tBodyAccJerk_std_X  
-tBodyAccJerk_std_Y  
-tBodyAccJerk_std_Z  
-tBodyGyro_mean_X  
-tBodyGyro_mean_Y  
-tBodyGyro_mean_Z  
-tBodyGyro_std_X  
-tBodyGyro_std_Y  
-tBodyGyro_std_Z  
-tBodyGyroJerk_mean_X  
-tBodyGyroJerk_mean_Y  
-tBodyGyroJerk_mean_Z  
-tBodyGyroJerk_std_X  
-tBodyGyroJerk_std_Y  
-tBodyGyroJerk_std_Z  
-tBodyAccMag_mean  
-tBodyAccMag_std  
-tGravityAccMag_mean  
-tGravityAccMag_std  
-tBodyAccJerkMag_mean  
-tBodyAccJerkMag_std  
-tBodyGyroMag_mean  
-tBodyGyroMag_std  
-tBodyGyroJerkMag_mean  
-tBodyGyroJerkMag_std  
-fBodyAcc_mean_X  
-fBodyAcc_mean_Y  
-fBodyAcc_mean_Z  
-fBodyAcc_std_X  
-fBodyAcc_std_Y  
-fBodyAcc_std_Z  
-fBodyAccJerk_mean_X  
-fBodyAccJerk_mean_Y  
-fBodyAccJerk_mean_Z  
-fBodyAccJerk_std_X  
-fBodyAccJerk_std_Y  
-fBodyAccJerk_std_Z  
-fBodyGyro_mean_X  
-fBodyGyro_mean_Y  
-fBodyGyro_mean_Z  
-fBodyGyro_std_X  
-fBodyGyro_std_Y  
-fBodyGyro_std_Z  
-fBodyAccMag_mean  
-fBodyAccMag_std  
-fBodyBodyAccJerkMag_mean  
-fBodyBodyAccJerkMag_std  
-fBodyBodyGyroMag_mean  
-fBodyBodyGyroMag_std  
-fBodyBodyGyroJerkMag_mean  
-fBodyBodyGyroJerkMag_std  
+avg_tBodyAcc_mean_X  
+avg_tBodyAcc_mean_Y  
+avg_tBodyAcc_mean_Z  
+avg_tBodyAcc_std_X  
+avg_tBodyAcc_std_Y  
+avg_tBodyAcc_std_Z  
+avg_tGravityAcc_mean_X  
+avg_tGravityAcc_mean_Y  
+avg_tGravityAcc_mean_Z  
+avg_tGravityAcc_std_X  
+avg_tGravityAcc_std_Y  
+avg_tGravityAcc_std_Z  
+avg_tBodyAccJerk_mean_X  
+avg_tBodyAccJerk_mean_Y  
+avg_tBodyAccJerk_mean_Z  
+avg_tBodyAccJerk_std_X  
+avg_tBodyAccJerk_std_Y  
+avg_tBodyAccJerk_std_Z  
+avg_tBodyGyro_mean_X  
+avg_tBodyGyro_mean_Y  
+avg_tBodyGyro_mean_Z  
+avg_tBodyGyro_std_X  
+avg_tBodyGyro_std_Y  
+avg_tBodyGyro_std_Z  
+avg_tBodyGyroJerk_mean_X  
+avg_tBodyGyroJerk_mean_Y  
+avg_tBodyGyroJerk_mean_Z  
+avg_tBodyGyroJerk_std_X  
+avg_tBodyGyroJerk_std_Y  
+avg_tBodyGyroJerk_std_Z  
+avg_tBodyAccMag_mean  
+avg_tBodyAccMag_std  
+avg_tGravityAccMag_mean  
+avg_tGravityAccMag_std  
+avg_tBodyAccJerkMag_mean  
+avg_tBodyAccJerkMag_std  
+avg_tBodyGyroMag_mean  
+avg_tBodyGyroMag_std  
+avg_tBodyGyroJerkMag_mean  
+avg_tBodyGyroJerkMag_std  
+avg_fBodyAcc_mean_X  
+avg_fBodyAcc_mean_Y  
+avg_fBodyAcc_mean_Z  
+avg_fBodyAcc_std_X  
+avg_fBodyAcc_std_Y  
+avg_fBodyAcc_std_Z  
+avg_fBodyAccJerk_mean_X  
+avg_fBodyAccJerk_mean_Y  
+avg_fBodyAccJerk_mean_Z  
+avg_fBodyAccJerk_std_X  
+avg_fBodyAccJerk_std_Y  
+avg_fBodyAccJerk_std_Z  
+avg_fBodyGyro_mean_X  
+avg_fBodyGyro_mean_Y  
+avg_fBodyGyro_mean_Z  
+avg_fBodyGyro_std_X  
+avg_fBodyGyro_std_Y  
+avg_fBodyGyro_std_Z  
+avg_fBodyAccMag_mean  
+avg_fBodyAccMag_std  
+avg_fBodyBodyAccJerkMag_mean  
+avg_fBodyBodyAccJerkMag_std  
+avg_fBodyBodyGyroMag_mean  
+avg_fBodyBodyGyroMag_std  
+avg_fBodyBodyGyroJerkMag_mean  
+avg_fBodyBodyGyroJerkMag_std  

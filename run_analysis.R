@@ -58,6 +58,9 @@ complete.set <- rbind(test.out,train.out)
 # compute the unweighted mean per measurement at subject;activity level
 complete.set.mean <- ddply(complete.set,.(subject,activity), colMeans)
 
+#prefix featuresnames with "avg" to indicate it is an average
+names(complete.set.mean) <-  c("subject","activity",paste("avg_",features.keep.beautified, sep=""))
+
 #attach the activity labels
 complete.set.mean$activity = as.factor(complete.set.mean$activity)
 levels(complete.set.mean$activity) = activity.labels[,2]
