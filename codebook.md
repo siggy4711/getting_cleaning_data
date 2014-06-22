@@ -38,8 +38,9 @@ I slightly adapted the explanation from the HAR study, quoted text in *italic*, 
 
 *The set of variables that were estimated from these signals are:*
 **
-*mean(): Mean value*
-*std(): Standard deviation*
+*mean(): Mean value*  
+*std(): Standard deviation*  
+*plus some more which are not relevant*  
 
 The featurenames from the HAR study are slightly adjusted, for better usuability in R, "()" is removed and "-" is replaced by "_", eg tBodyAcc-mean()-X is changed to "tBodyAcc_mean_X". No further adjustment is done to keep the names as close as possible to the original names who are already descriptive.
 
