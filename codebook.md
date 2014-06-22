@@ -80,7 +80,7 @@ activity performed at feature observation
 - LAYING
 
 Features:  
-The features are of type decimal between [-1,1] eg -0.928444801702128
+The features are of type decimal between [-1,1] eg -0.928444801702128  
 avg_tBodyAcc_mean_X  
 avg_tBodyAcc_mean_Y  
 avg_tBodyAcc_mean_Z  
