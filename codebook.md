@@ -44,6 +44,10 @@ I slightly adapted the explanation from the HAR study, quoted text in *italic*, 
 
 The featurenames from the HAR study are slightly adjusted, for better usuability in R, "()" is removed and "-" is replaced by "_", eg tBodyAcc-mean()-X is changed to "tBodyAcc_mean_X". No further adjustment is done to keep the names as close as possible to the original names who are already descriptive.
 
+Examples, from the featurenames of "uci_har_get_clean_summary.csv"  
+tBodyAcc_mean_X: t prefix means time domain, BodyAcc is acceleration body part, mean is the estimated mean from the signals(over a small time period), X is the X-axis  
+fBodyAcc_std_Y: f prefix means frequency domain, BodyAcc is acceleration body part, std is the estimated standard deviation from the signals(over a small time period), Y is the Y-axis
+
 Note: the semantics for features containing fBodyBody in the name are not given, probably one body too much. Nonetheless these featurenames are kept as is.
 
 For the "uci_har_get_clean_summary.csv" file all feature observations are grouped by subject and activity, and for every feature(of 66) the average per group is calculated.
