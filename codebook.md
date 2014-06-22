@@ -1,8 +1,18 @@
-This document describes the data layout and semantics of the file "uci_har_get_clean_summary.csv"
+This document describes the data layout and dataelements of the file "uci_har_get_clean_summary.csv"
 
+## Introduction
 The dataset delivered by [Smartlab](www.smartlab.ws) as produced by the Human Activity Recognition study(HAR) is retrieved at [Data location](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). Forementioned dataset is then further processed, see [README.md](https://github.com/siggy4711/getting_cleaning_data/blob/master/README.md) for a description of the processing.
 
 The data in the file uci_har_get_clean_summary.csv records the average of feature observations per subject/activity group. There are 30 subjects and each subject performs one of 6 activities so there are 30*6 = 180 groups(rows). There are 66 feature averages per group so a single row contains 68 values, these are the subject, the activity and the 66 feature averages.
+
+
+### File structure
+run_analysis.R will output "uci_har_get_clean_summary.csv", stored in working directory,format:
+- first row has columnnames
+- separator is ","
+- dimensions are 180 rows 68 columns.The columns consist of subject,activity and 66 features. The rows contain the normalised average(between [-1,1]) of the 66 features per subject per activity, there are 30 subject each performing 6 activities totaling to 180 rows.
+- size 220 kB
+
 
 ## Featurenames
 The featurenames are provided in the dataset of the HAR study in the file features.txt, a description is given in features_info.txt. The HAR study delivers a featurevector of 561 elements, as a requirement, of the 561 feature vector only features with "mean()" and "std()" in their name are kept when constructing "uci_har_get_clean_summary.csv", the kept features contain the measurements on the mean and standard deviation(over a timewindow), 66 features are kept.
@@ -70,7 +80,7 @@ activity performed at feature observation
 - LAYING
 
 Features:  
-the average of the features are already normalised in the HAR dataset to a mean of 0 and a range from -1 to 1 and are of type decimal eg -0.928444801702128  
+The features are of type decimal between [-1,1] eg -0.928444801702128
 tBodyAcc_mean_X  
 tBodyAcc_mean_Y  
 tBodyAcc_mean_Z  
